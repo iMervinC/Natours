@@ -1,7 +1,7 @@
 .btn{
     &:link,
     &:visited {
-        background-color: $color-white;
+        //background-color: $color-white;
         text-transform: uppercase;
         text-decoration: none;
         padding: 1.5rem 4rem;
@@ -9,7 +9,7 @@
         border-radius: 10rem;
         backface-visibility: hidden;
         position: relative;
-        transition: all .2s;
+        transition: all .3s;
     }
 
     &:hover {
@@ -30,6 +30,19 @@
     &--white {
         background-color: $color-white;
         color: $color-dark-grey;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
+
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-primary;
+        }
     }
 
     &::after {
@@ -43,10 +56,6 @@
         left: 0;
         z-index: -1;
         transition: all .4s;
-    }
-
-    &--white::after {
-        background-color: $color-white;
     }
 
     &--animation {
