@@ -1,4 +1,5 @@
 .btn{
+    &,
     &:link,
     &:visited {
         //background-color: $color-white;
@@ -10,8 +11,13 @@
         backface-visibility: hidden;
         position: relative;
         transition: all .3s;
+
+        //button elem changes
+        border: none;
+        cursor: pointer;
     }
 
+    &:focus,
     &:hover {
         transform: translateY(-0.3rem);
         box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
@@ -22,7 +28,9 @@
         }
     }
 
+    &:focus,
     &:active {
+        outline: none;
         transform: translateY(-0.1rem);
         box-shadow: 0 0.5rem 0.5rem rgba($color-black, 0.2);
     }
