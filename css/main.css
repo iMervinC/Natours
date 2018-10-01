@@ -791,6 +791,102 @@ body {
   opacity: 1;
 }
 
+.popup {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 400;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 75%;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2rem 4rem black;
+          box-shadow: 0 2rem 4rem black;
+  border-radius: 5px;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%) scale(0.1);
+          transform: translate(-50%, -50%) scale(0.1);
+  -webkit-transition: all .4s .2s;
+  transition: all .4s .2s;
+}
+
+.popup:target .popup__content {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+.popup__left {
+  width: 33.333333%;
+  display: table-cell;
+}
+
+.popup__right {
+  width: 66.6666667%;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 3rem 5rem;
+}
+
+.popup__img {
+  display: block;
+  width: 100%;
+}
+
+.popup__text {
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+  -webkit-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 5rem;
+          column-gap: 5rem;
+  -webkit-column-rule: 1px solid #f7f7f7;
+          column-rule: 1px solid #f7f7f7;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+.popup__close:link, .popup__close:visited {
+  top: 2.5rem;
+  right: 2.5rem;
+  color: #777777;
+  position: absolute;
+  font-size: 3rem;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.popup__close:hover {
+  color: #ff7730;
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  text-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.7);
+}
+
 .header {
   position: relative;
   height: 95vh;
@@ -998,7 +1094,7 @@ body {
   color: #fff;
   text-transform: uppercase;
   background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
-  background-size: 225%;
+  background-size: 227%;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
