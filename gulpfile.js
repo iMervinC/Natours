@@ -9,24 +9,24 @@ imagemin = require('gulp-imagemin');
             interlaced: true,
             multipass: true
         }))
-        .pipe(gulp.dest("./dist/img"));
+        .pipe(gulp.dest("./docs/img"));
     });
 
     gulp.task('copyVid',['optimizeImages'], function() {
         return gulp.src(["./img/*.mp4", "!./img/*.webm"])
-        .pipe(gulp.dest("./dist/img"));
+        .pipe(gulp.dest("./docs/img"));
     });
 
  
 
     gulp.task('css',['optimizeImages', 'copyVid'], function() {
         return gulp.src("./css/**/**/*")
-        .pipe(gulp.dest("./dist/css"));
+        .pipe(gulp.dest("./docs/css"));
     });
 
     gulp.task('html',['optimizeImages', 'copyVid', 'css'], function() {
         return gulp.src("./*.html")
-        .pipe(gulp.dest("./dist"));
+        .pipe(gulp.dest("./docs"));
     });
     
 
